@@ -1,0 +1,113 @@
+* {
+    margin: var(--n1);
+    padding: var(--n1);
+    box-sizing: border-box;
+}
+:root {
+--boja: red;
+--c1: #ff3e88;
+--c2:#2b215f;
+--c3:#fff;
+--s0: 1px;
+--s1:100%;
+--s2:20px;
+--s3:4px;
+--e1:.5s ease-in-out;
+--e2:.3s ease-in-out;
+--d1: block;
+--n1:0 ;
+--n2:1;
+--n3:4;
+--n4:10;
+--n5:1.5;
+
+}
+
+
+body {
+    padding: calc(var(--s2)*2 + var(--s3)*2 + var(--s0)*2);
+    font-family: sans-serif;
+}
+
+.card {
+    width: calc(var(--s2) * 15);
+    aspect-ratio: calc(var(--n2) / var(--n5));
+    border: var(--s0) solid #ccc;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: var(--s2) var(--s2) var(--n1) var(--s2);
+    gap: var(--s2);
+    overflow: hidden;
+    
+}
+
+.card::after {
+    content: '';
+    width: var(--s1);
+    height: var(--n1);
+    background: var(--c2);
+    display:var(--d1);
+    transition: var(--e1);
+    position: absolute;
+    top: var(--n1);
+    left:var(--n1);
+    z-index: calc(0 - var(--n2));
+}
+
+.card:hover::after {
+    height:var(--s1);
+}
+
+.title {
+    font-size: calc(var(--s3) * 6);
+    text-transform: uppercase;
+    font-weight: calc(var(--n4) * 60);
+    color: var(--c2);
+    & span {
+        color: var(--c1);
+        display: var(--d1);
+    }
+}
+
+.card:hover .title {
+    color: var(--c3);
+}
+
+.content {
+    color: var(--c3);
+    font-size: calc(var(--s3) * var(--n3));
+    transition: var(--e1);
+    transform: translateY(calc(var(--s2) * var(--n3)));
+    height: var(--n1);
+    padding-bottom:var(--s2);
+    }
+
+
+.card:hover .content {
+    font-size: calc(var(--s3) * var(--n3));
+    transform: translateY(var(--n1));
+    height: auto;
+}
+
+svg {
+    width:calc(var(--s2) * var(--n3));
+    transition: var(--e2);    
+}
+
+svg path {
+    fill: var(--c3);
+    stroke: var(--c2);
+    transition: var(--e2);
+}
+
+.card:hover svg path {
+    fill: var(--c2);
+    stroke: var(--c1);
+}
+
+.card:hover svg {
+    align-self: center;
+    transform: scale(var(--n5)) translateY(calc(var(--s2) * -2 ))
+}
