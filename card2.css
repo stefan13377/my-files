@@ -1,0 +1,76 @@
+.card2 {
+    width: calc(var(--s2) * 10);
+    aspect-ratio: calc(var(--n2) / var(--n5));
+    border: var(--s0) solid #ccc;
+    position: relative;
+    display: var(--d2);
+    flex-direction: var(--d3);
+    justify-content: var(--p3);
+    padding: var(--s4) var(--s4) var(--n1) var(--s4);
+    gap: calc(var(--s3)*2);
+    overflow: hidden;
+    
+}
+
+.card2::after {
+    content: '';
+    width: var(--s1);
+    height: var(--n1);
+    background: var(--c2);
+    display:var(--d1);
+    transition: var(--e1);
+    position: absolute;
+    top: var(--n1);
+    left:0;
+    z-index: calc(0 - var(--n2));
+}
+
+.card2:hover::after {
+    height:var(--s1);
+}
+
+.card2 .title {
+    font-size: calc(var(--s3) * 4);
+    text-transform: uppercase;
+    font-weight: calc(var(--n4) * 60);
+    color: var(--c2);
+    & span {
+        color: var(--c1);
+        display: var(--d1);
+    }
+}
+
+.card2:hover .title {
+    color: var(--c3);
+}
+
+.card2 .content {
+    color: var(--c3);
+    font-size: calc(var(--s3) * 3);
+    transition: var(--e1);
+    transform: translateY(calc(var(--s2) * 3));
+    height: var(--n1);
+    }
+
+
+.card2:hover .content {
+    font-size: calc(var(--s3) * 3);
+    transform: translateY(var(--n1));
+    padding-bottom:calc(var(--s3)*2);
+    height: auto;
+}
+
+.card2 svg {
+    width:calc(var(--s2) * 3);
+    transition: var(--e2);    
+}
+
+.card2:hover svg path {
+    fill: var(--c2);
+    stroke: var(--c1);
+}
+
+.card2:hover svg {
+    align-self: var(--p1);
+    transform: scale(var(--n5)) translateY(calc(var(--s4) * -2 ))
+}
