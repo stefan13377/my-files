@@ -10,18 +10,20 @@ body {
     font-family: var(--f2);
 }
 .container{   
-    justify-content:var(--p1);
+    /* justify-content:var(--p1); */
+    /* width:100vw; */
     align-items:var(--p1);
     height: var(--s6);
     display:var(--d2);
     gap: var(--s4);
-    padding: var(--n1) calc(var(--s8)*6);
+    padding: var(--n1) calc(var(--s8)*7);
 }
-.carda{
-    display:var(--d2);
-    justify-content: var(--p1);
-}
+/* .carda{ */
+    /* display:var(--d2); */
+    /* justify-content: var(--p1); */
+/* } */
 .cardb{
+    /* max-width: 56%; */
     display:var(--d2);
     flex-flow: var(--p2);
     justify-content:var(--p1);
