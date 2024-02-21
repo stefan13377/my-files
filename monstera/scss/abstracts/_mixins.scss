@@ -30,3 +30,11 @@
   align-items: $align-items;
   gap: $gap;
 }
+@mixin ptitel($content) {
+  content: $content;
+  position: absolute;
+  top: -50%;
+  color: $light;
+  @extend .display;
+  z-index: -1;
+}

@@ -14,12 +14,7 @@
 .footer-content {
   width: 100%;
   @include flexbox(flex, space-between, flex-start, 20px);
-  .footer-heading {
-    @extend .paragraph;
-    text-transform: uppercase;
-    font-weight: 500;
-    color: $white;
-  }
+
   .footer-subsection {
     display: flex;
     flex-direction: column;
@@ -42,4 +37,10 @@
 .footer-icons {
   display: flex;
   gap: 20px;
+}
+.footer-heading {
+  @extend .paragraph;
+  text-transform: uppercase;
+  font-weight: 500;
+  color: $white;
 }
