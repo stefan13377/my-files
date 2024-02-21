@@ -1,0 +1,17 @@
+.header {
+  @include flexbox(flex, space-between, center);
+  @include padding-y(24px);
+
+  ul {
+    @include flexbox(flex, flex-end, center, 12px);
+  }
+  li a {
+    @extend .nav-text;
+    padding: 12px 20px;
+    transition: $transition;
+    &:hover,
+    &.active {
+      background-color: $light;
+    }
+  }
+}
