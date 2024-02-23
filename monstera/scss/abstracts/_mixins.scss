@@ -1,0 +1,40 @@
+@mixin typographyStyle(
+  $font-size,
+  $line-height,
+  $font-weight,
+  $font-family,
+  $color,
+  $letter-spacing: 0
+) {
+  font-size: $font-size;
+  line-height: $line-height;
+  font-weight: $font-weight;
+  font-family: $font-family;
+  color: $color;
+  letter-spacing: $letter-spacing;
+}
+
+@mixin padding-y($padding) {
+  padding-top: $padding;
+  padding-bottom: $padding;
+}
+
+@mixin padding-x($padding) {
+  padding-left: $padding;
+  padding-right: $padding;
+}
+
+@mixin flexbox($display, $justify-content, $align-items, $gap: 0) {
+  display: $display;
+  justify-content: $justify-content;
+  align-items: $align-items;
+  gap: $gap;
+}
+@mixin ptitel($content) {
+  content: $content;
+  position: absolute;
+  top: -50%;
+  color: $light;
+  @extend .display;
+  z-index: -1;
+}

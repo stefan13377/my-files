@@ -1,0 +1,149 @@
+.faq {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 20px;
+  @include padding-y(180px);
+}
+.faq-content {
+  grid-column: 1/8;
+  @include flexbox(flex, flex-start, flex-start, 40px);
+  flex-direction: column;
+  h1 {
+    position: relative;
+    max-width: 70%;
+    &::after {
+      left: 0;
+      //   transform: translateX(-50%);
+      @include ptitel("In Search of Answers?");
+      width: max-content;
+    }
+  }
+  button {
+    @extend .see-more;
+  }
+}
+.faq-image {
+  grid-column: 9/13;
+  position: relative;
+  &::before {
+    content: "";
+    width: 450px;
+    height: 450px;
+    background-color: $accent;
+    border-radius: 100%;
+    border-bottom-right-radius: 0;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+  }
+  img {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+  }
+}
+.discover {
+  @include padding-y(180px);
+  .h2 {
+    position: relative;
+    margin-bottom: 80px;
+    text-align: center;
+    &::after {
+      left: 0;
+      //   transform: translateX(-50%);
+      @include ptitel("Plant Perks");
+      left: 50%;
+      transform: translateX(-50%);
+    }
+  }
+  .chat {
+    @include flexbox(flex, center, flex-start, 20px);
+    .chatbox {
+      height: 200px;
+      width: 200px;
+      border-radius: 20px;
+      position: relative;
+      overflow: hidden;
+      .front,
+      .back {
+        @include flexbox(flex, center, center);
+        transition: 0.3s ease-in-out;
+        height: 100%;
+        width: 100%;
+        background-color: $light;
+        position: absolute;
+      }
+      .back {
+        opacity: 0;
+        background-color: $accent;
+        color: $white;
+      }
+      &:hover {
+        .front {
+          opacity: 0;
+        }
+        .back {
+          opacity: 1;
+        }
+      }
+    }
+  }
+}
+.questions {
+  h2 {
+    position: relative;
+    margin-bottom: 80px;
+    text-align: center;
+    &::after {
+      left: 0;
+      //   transform: translateX(-50%);
+      @include ptitel("Plant Perks");
+      left: 50%;
+      transform: translateX(-50%);
+    }
+  }
+  .accordions {
+    @include flexbox(flex, flex-start, flex-start, 20px);
+    flex-wrap: wrap;
+    details {
+      padding: 24px;
+      border: 1px solid $gray-light;
+      border-radius: 16px;
+      width: calc(50% - 10px);
+      summary {
+        font-size: 20px;
+        font-weight: 500;
+        line-height: 32px;
+        letter-spacing: 0em;
+        text-align: left;
+        @include flexbox(flex, space-between, center);
+        &::after {
+          content: url("../../assets/icons/Vector.svg");
+        }
+        .accordion-content {
+          margin-top: 24px;
+        }
+      }
+    }
+    .accordion[open] > summary:first-of-type,
+    .accordion > summary:first-of-type {
+      list-style-type: none;
+    }
+    .accordion[open] > summary::after {
+      transform: rotate(90deg);
+    }
+    .accordion[open] > summary ~ * {
+      animation: opacity 0.5s ease-in-out;
+    }
+  }
+}
+
+@keyframes opacity {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
